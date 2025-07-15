@@ -61,7 +61,7 @@ function TermsAndAgreement({ selcetedPaymentMethod }) {
 
   const handleContinueClick = () => {
     console.log(cart)
-    const url = "http://gns.000.pe/payment.php";
+    const url = "http://localhost/gamenonstop/src/backend/php/payment.php";
 
 
     let formData = new FormData();

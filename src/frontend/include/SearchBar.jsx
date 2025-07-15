@@ -21,7 +21,7 @@ function SearchBar() {
 
   useEffect(() => {
     if (searchGame.trim() !== "") {
-      const url = "http://gns.000.pe/searchGame.php";
+      const url = "http://localhost/gamenonstop/src/backend/php/searchGame.php";
       const formData = new FormData();
       formData.append("searchGame", searchGame);
 

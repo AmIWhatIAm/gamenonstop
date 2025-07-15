@@ -121,7 +121,7 @@ function LoginPage() {
       });
     }
     else {
-      const url = "http://gns.000.pe/login.php";
+      const url = "http://localhost/gamenonstop/src/backend/php/login.php";
 
       let formData = new FormData();
       formData.append("username", username);
@@ -182,7 +182,7 @@ function LoginPage() {
       });
     }
     else {
-      const url = "http://gns.000.pe/register.php";
+      const url = "http://localhost/gamenonstop/src/backend/php/register.php";
 
       let formData = new FormData();
       formData.append("username", username);

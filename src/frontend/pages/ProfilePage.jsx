@@ -15,70 +15,41 @@ const ProfilePage = () => {
 
   // Mock data for testing
   useEffect(() => {
-    // const mockGames = [
-    //   {
-    //     game_id: 105600,
-    //     title: "Terraria",
-    //     img_src:
-    //       "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/header.jpg?t=1666290860",
-    //     desc: "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game.",
-    //     rating: "Overwhelmingly Positive",
-    //     rating_num: 1057516,
-    //     release_date: "2011-05-17",
-    //     developer: "Re-Logic",
-    //     publisher: "Re-Logic",
-    //     price: 26.75,
-    //   },
-    //   {
-    //     game_id: 814380,
-    //     title: "Sekiro™: Shadows Die Twice - GOTY Edition",
-    //     img_src:
-    //       "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg?t=1721684463",
-    //     desc: "Game of the Year - The Game Awards 2019 Best Action Game of 2019 - IGN.",
-    //     rating: "Overwhelmingly Positive",
-    //     rating_num: 216477,
-    //     release_date: "2019-03-22",
-    //     developer: "FromSoftware, Inc.",
-    //     publisher: "Activision",
-    //     price: 285.0,
-    //   },
-    //   {
-    //     game_id: 648800,
-    //     title: "Raft",
-    //     img_src:
-    //       "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/648800/header.jpg?t=1725373838",
-    //     desc: "Raft™ throws you and your friends into an epic oceanic adventure!",
-    //     rating: "Very Positive",
-    //     rating_num: 274865,
-    //     release_date: "2022-06-21",
-    //     developer: "Redbeet Interactive",
-    //     publisher: "Axolot Games",
-    //     price: 38.0,
-    //   },
-    // ];
-
-    const url = "http://gns.000.pe/get_game.php";
-
-    let mockGames = [];
-    let formData = new FormData();
-    const userObject = JSON.parse(localStorage.getItem("user"));  // Convert back to an object
-
-    formData.append("user_id", userObject.id);
-
-    axios.post(url, formData)
-    .then((response) =>  {
-      console.log(response.data.game_list);
-      if (response.data.success) {
-        console.log("success")
-        setPurchases(response.data.game_list);
-      } else {
-        mockGames = []
+    const fetchPurchases = async () => {
+      if (!user || !user.id) {
+        setLoading(false);
+        return;
       }
-    }).catch(error => {console.log(error.message)})
 
-    setPurchases(mockGames);
-    setLoading(false);
-  }, []);
+      try {
+        const response = await axios.post(
+          "http://localhost/gamenonstop/src/backend/php/get_user_games.php",
+          { user_id: user.id },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        console.log("Purchase response:", response.data);
+
+        if (response.data.success) {
+          setPurchases(response.data.game_list);
+        } else {
+          console.error("Error fetching purchases:", response.data.error);
+          setPurchases([]);
+        }
+      } catch (error) {
+        console.error("Error fetching purchases:", error);
+        setPurchases([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPurchases();
+  }, [user]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -89,7 +60,10 @@ const ProfilePage = () => {
         <header className="profile-header">
           {user ? (
             user.picture ? (
-              <img src={user.picture} alt={user.name? user.name : user.username} />
+              <img
+                src={user.picture}
+                alt={user.name ? user.name : user.username}
+              />
             ) : (
               <FaUserCircle className="profile-placeholder" />
             )
@@ -97,7 +71,7 @@ const ProfilePage = () => {
             <FaUserCircle className="profile-placeholder" />
           )}
           <div className="profile-info">
-            <h1>{user ? (user.name? user.name : user.username) : "Guest"}</h1>
+            <h1>{user ? (user.name ? user.name : user.username) : "Guest"}</h1>
             <p>{user ? user.email : "No email"}</p>
           </div>
         </header>

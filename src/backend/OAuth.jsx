@@ -43,7 +43,7 @@ function OAuth({ triggerLogin }) {
                         let picture = res.data.picture;
                         
 
-                        const url = "http://gns.000.pe/googleLogin.php";
+                        const url = "http://localhost/gamenonstop/src/backend/php/googleLogin.php";
 
                         let formData = new FormData();
                         formData.append("username", username);

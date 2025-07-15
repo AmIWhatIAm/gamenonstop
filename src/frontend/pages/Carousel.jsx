@@ -21,7 +21,7 @@ const CarouselFlow = () => {
   // Fetch games from the database
   useEffect(() => {
     axios
-      .get("http://gns.000.pe/carousel_get_game.php")
+      .get("http://localhost/gamenonstop/src/backend/php/carousel_get_game.php")
       .then((response) => {
         setImageData(response.data); // Store the image data in state
         if (response.data.length > 0) {

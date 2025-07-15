@@ -12,7 +12,7 @@ function Store() {
     const loadGames = async () => {
       try {
         const response = await axios.get(
-          "http://gns.000.pe/get_game.php",
+          "http://localhost/gamenonstop/src/backend/php/get_game.php",
         );
         setGames(response.data); // Set the fetched data to games state
       } catch (error) {
