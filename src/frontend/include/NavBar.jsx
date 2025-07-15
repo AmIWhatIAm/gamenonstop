@@ -21,7 +21,7 @@ function NavBarTop() {
       <div className="flex items-center space-x-2.5 p-3 sm:space-x-5">
         <Link to="/#home">
           <img
-            src="../../../images/logo/light/GNS_Horizontal_Black.svg"
+            src="public/images/logo/light/GNS_Horizontal_Black.svg"
             alt="GameNonStop Logo"
             className="h-6 sm:h-[30px]"
           />

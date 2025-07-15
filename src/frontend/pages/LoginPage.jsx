@@ -1,6 +1,6 @@
 import "../css/login-style.css";
 
-import React, { useEffect, useState, useRef, useContext} from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import OAuth from "../../backend/OAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -34,7 +34,7 @@ function LoginPage() {
     console.log(password)
   }, [password]);
 
-  
+
   const handleLoginClick = () => {
     console.log(username, password);
     setLogin(true);
@@ -82,38 +82,13 @@ function LoginPage() {
     // Show register form and hide login form
     loginForm.style.left = "150%"; // Push login form off screen
     loginForm.style.opacity = 0;
-    
+
     registerForm.style.left = "50%"; // Bring register form into view
     registerForm.style.opacity = 1;
 
     // Adjust border radius (optional)
     document.querySelector(".col-1").style.borderRadius = "0 30% 10% 0";
   };
-
-  // const googleLogin = () => {
-  //   // call OAuth login function
-  //     axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-  //           headers: {
-  //               Authorization: `Bearer ${user.access_token}`,
-  //               Accept: 'application/json'
-  //           }
-  //       })
-  //       .then((response) => {
-  //         if (response.data.success) { 
-  //           loginUser({username, password});
-  //           //console
-  //           navigate('/store');  // Navigate to '/store' if successful
-  //         } else {
-  //           Swal.fire({
-  //             icon: 'error',
-  //             title: 'Login Error',
-  //             text: response.data.error
-  //           }); // Handle the failure case if needed
-  //         }
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-  
 
   const Login = (e) => {
     e.preventDefault();
@@ -140,7 +115,7 @@ function LoginPage() {
         text: "Please fill in the password!",
       });
     }
-    else{
+    else {
       const url = "http://gns.000.pe/login.php";
 
       let formData = new FormData();
@@ -148,35 +123,31 @@ function LoginPage() {
       formData.append("password", password);
 
       axios.post(url, formData)
-      .then((response) =>  {
-        console.log(response.data);
-        if (response.data.success) { 
-          let id = response.data.user.id;
-          let username = response.data.user.username;
-          let email = response.data.user.email;
-          loginUser({id, username, email});
-          navigate('/store');  // Navigate to '/store' if successful
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Login Error',
-            text: response.data.error
-          }); // Handle the failure case if needed
-        }
-      }).catch(error => {console.log(error.message)})
+        .then((response) => {
+          console.log(response.data);
+          if (response.data.success) {
+            let id = response.data.user.id;
+            let username = response.data.user.username;
+            let email = response.data.user.email;
+            loginUser({ id, username, email });
+            navigate('/store');  // Navigate to '/store' if successful
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Login Error',
+              text: response.data.error
+            }); // Handle the failure case if needed
+          }
+        }).catch(error => { console.log(error.message) })
       setName("");
       setPassword("");
     }
-    
+
   };
 
   const Register = (e) => {
     e.preventDefault();
 
-    console.log("detected register");
-    console.log(username)
-    console.log(email)
-    console.log(password)
     if (username === "" && email === "" && password === "") {
       Swal.fire({
         icon: "error",
@@ -205,11 +176,7 @@ function LoginPage() {
         text: "Please fill in the email!",
       });
     }
-    else{
-      console.log("register query")
-      console.log(username)
-      console.log(email)
-      console.log(password)
+    else {
       const url = "http://gns.000.pe/register.php";
 
       let formData = new FormData();
@@ -218,27 +185,27 @@ function LoginPage() {
       formData.append("email", email);
 
       axios.post(url, formData)
-      .then((response) =>  {
-        console.log(response.data);
-        if (response.data.success) {
-          let id = response.data.user.id;
-          let username = response.data.user.username;
-          let email = response.data.user.email;
-          Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: response.data.message
-          }); // Handle the failure case if needed
-          loginUser({id, username, email});
-          navigate('/store');  // Navigate to '/store' if successful
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Login Error',
-            text: response.data.error
-          }); // Handle the failure case if needed
-        }
-      }).catch(error => {console.log(error.message)})
+        .then((response) => {
+          console.log(response.data);
+          if (response.data.success) {
+            let id = response.data.user.id;
+            let username = response.data.user.username;
+            let email = response.data.user.email;
+            Swal.fire({
+              icon: 'success',
+              title: 'Success!',
+              text: response.data.message
+            }); // Handle the failure case if needed
+            loginUser({ id, username, email });
+            navigate('/store');  // Navigate to '/store' if successful
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Login Error',
+              text: response.data.error
+            }); // Handle the failure case if needed
+          }
+        }).catch(error => { console.log(error.message) })
       setName("");
       setEmail("");
       setPassword("");
@@ -266,21 +233,21 @@ function LoginPage() {
           <div className="col-1">
             <div className="image-layer">
               <img
-                src="../../../images/login-images/guy-playing-pc.png"
+                src="public/images/login-images/guy-playing-pc.png"
                 className="form-image-main pcguy"
               />
               <img
-                src="./../../images/login-images/login-controller.png"
+                src="public/images/login-images/login-controller.png"
                 className="form-image controller"
               />
               <img
-                src="./../../images/login-images/PSsymbol.png"
+                src="public/images/login-images/PSsymbol.png"
                 className="form-image symbol"
               />
             </div>
             <p className="featured-words">
               You Are Few Minutes A Way To Get Your Favourite Games on{" "}
-              <img src="../../../images/logo/light/GNS_TextOnly_Black.svg" alt="" />
+              <img src="public/images/logo/light/GNS_TextOnly_Black.svg" alt="" />
             </p>
           </div>
           <div className="col-2">
@@ -325,17 +292,15 @@ function LoginPage() {
                   />
                   <i className="fa-solid fa-unlock icon"></i>
                 </div>
-                <div className="input-submit">
-                  <button
-                    className={
-                      login ? "loginBtn-clicked" : "loginBtn-notClicked"
-                    }
-                    //onClick={Login}
-                  >
-                    <span>Sign In </span>
-                    <i className="fa-solid fa-right-to-bracket"></i>
-                  </button>
-                </div>
+                <button
+                  className={
+                    login ? "loginBtn-clicked input-submit" : "loginBtn-notClicked input-submit"
+                  }
+                //onClick={Login}
+                >
+                  <span>Sign In </span>
+                  <i className="fa-solid fa-right-to-bracket"></i>
+                </button>
               </div>
               <OAuth triggerLogin={triggerLogin} />
             </form>
@@ -375,14 +340,13 @@ function LoginPage() {
                   />
                   <i className="fa-solid fa-unlock icon"></i>
                 </div>
-                <div className="input-submit">
-                  <button 
-                    //onClick={Register}
-                  >
-                    <span>Sign Up </span>
-                    <i className="fa-solid fa-right-to-bracket"></i>
-                  </button>
-                </div>
+                <button
+                  className="input-submit"
+                //onClick={Register}
+                >
+                  <span>Sign Up </span>
+                  <i className="fa-solid fa-right-to-bracket"></i>
+                </button>
               </div>
               <OAuth triggerLogin={triggerLogin} />
             </form>

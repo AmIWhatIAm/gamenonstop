@@ -1,5 +1,5 @@
 .login-page-body {
-    background: url("../../../images/login-images/login-background.jpg");
+    background: url("public/images/login-images/login-background.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -149,19 +149,20 @@
 .input-box {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .input-box .icon {
     color: #282828;
     position: absolute;
-    right: 3rem;
+    right: 1vw;
 }
 
 .input-submit {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42vh;
+    width: 35vw;
     height: 7.3vh;
     padding: 0 15px;
     margin: 2vh;
@@ -172,11 +173,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: .3s;
+    gap: 7px;
 }
 
 .input-submit:hover {
     transform: scale(0.9);
-    gap: 1vh;
 }
 
 .social-login {
