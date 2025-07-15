@@ -3,6 +3,8 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
+    require_once 'db_config.php';
+
     // Allow requests from any origin
     header("Access-Control-Allow-Origin: *");
     // Allow certain HTTP methods
@@ -22,15 +24,9 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){ 
         $searchString = $_POST['searchGame'];
-    // echo($name);
             
-    $servername = "sql102.infinityfree.com"; // Updated with your server hostname
-$username = "if0_37568701"; // Your database username from the image
-$password = "teoh0628"; // The password provided in the image
-$dbname = "if0_37568701_gns"; // Use the actual database name provided in the image
-        
         // Create connection
-        $conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
+        $conn = getDbConnection();
         // if (!$conn)
         //     die('Could not connect to the database: ' . mysqli_connect_error());
         // else

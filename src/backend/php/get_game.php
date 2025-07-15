@@ -4,13 +4,11 @@ session_start();
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
-// Database connection parameters
-$servername = "sql102.infinityfree.com"; // Updated with your server hostname
-$username = "if0_37568701"; // Your database username from the image
-$password = "teoh0628"; // The password provided in the image
-$dbname = "if0_37568701_gns"; // Use the actual database name provided in the image
+
+require_once 'db_config.php';
+
 // Create a new connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = getDbConnection();
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
