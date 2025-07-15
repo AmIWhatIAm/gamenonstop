@@ -1,7 +1,7 @@
 import '../../css/MainPlayableGamesSection.css'; // Import the section-specific CSS
-import pacman from '../../../assets/images/pac_man_official_pacman_video_game.jpg'; // Import the image
-import flappy_bird from '../../../assets/images/flappy-birds.jpg'; // Import the image
-import wordle from '../../../assets/images/wordle.jpg'; // Import the image
+import pacman from '../../../assets/images/games/pac_man_official_pacman_video_game.jpg'; 
+import flappy_bird from '../../../assets/images/games/flappy-birds.jpg'; 
+import wordle from '../../../assets/images/games/wordle.jpg'; 
 
 const MainPlayableGamesSection = () => (
   <section className="section2 main-playable-section-body">

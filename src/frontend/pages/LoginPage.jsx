@@ -10,6 +10,11 @@ import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import UserContext from "./LoginContext";
 
+import logo from '../../assets/images/logo/GNS_TextOnly_Black.svg';
+import guy_playing_pc from '../../assets/images/ui/guy-playing-pc.png'
+import controller from '../../assets/images/ui/login-controller.png'
+import symbols from '../../assets/images/ui/PSsymbol.png'
+
 function LoginPage() {
   const { user, loginUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -233,21 +238,21 @@ function LoginPage() {
           <div className="col-1">
             <div className="image-layer">
               <img
-                src="public/images/login-images/guy-playing-pc.png"
+                src={guy_playing_pc}
                 className="form-image-main pcguy"
               />
               <img
-                src="public/images/login-images/login-controller.png"
+                src={controller}
                 className="form-image controller"
               />
               <img
-                src="public/images/login-images/PSsymbol.png"
+                src={symbols}
                 className="form-image symbol"
               />
             </div>
             <p className="featured-words">
               You Are Few Minutes A Way To Get Your Favourite Games on{" "}
-              <img src="public/images/logo/light/GNS_TextOnly_Black.svg" alt="" />
+              <img src={logo} alt="" />
             </p>
           </div>
           <div className="col-2">
@@ -342,7 +347,6 @@ function LoginPage() {
                 </div>
                 <button
                   className="input-submit"
-                //onClick={Register}
                 >
                   <span>Sign Up </span>
                   <i className="fa-solid fa-right-to-bracket"></i>

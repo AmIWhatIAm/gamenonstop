@@ -1,12 +1,13 @@
-import guy_playing_pc from "../../../assets/images/guy-playing-pc.png"; // Import the image
+import guy_playing_pc from "../../../assets/images/ui/guy-playing-pc.png"; 
+import logo from "../../../assets/images/logo/GNS_Horizontal_Black.svg"
 import { Link } from "react-router-dom";
 
 const MainHomeSection = () => (
   <section className="section1 home">
     <div className="home-text">
       <h1>Welcome to</h1>
-      <img src="public/images/logo/light/GNS_Horizontal2_Black.svg" />
-      <br />
+      <img src={logo} />
+      <br/>
       <p>
         &#34;At <span style={{ color: "red" }}>GNS</span>, we bring the gaming
         world to your fingertips. Explore our vast collection of the latest

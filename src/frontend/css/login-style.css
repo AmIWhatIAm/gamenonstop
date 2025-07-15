@@ -1,5 +1,5 @@
 .login-page-body {
-    background: url("public/images/login-images/login-background.jpg");
+    background: url("../../assets/images/background/red-background.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

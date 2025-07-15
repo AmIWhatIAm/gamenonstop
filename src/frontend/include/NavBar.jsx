@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import UserProfileRight from "./UserProfile";
 import { CartContext } from "../Cart/CartContext";
 import { IoCartSharp, IoStar } from "react-icons/io5";
+import logo from "../../assets/images/logo/GNS_Horizontal_Black.svg";
 
 function NavBar() {
   return (
@@ -21,7 +22,7 @@ function NavBarTop() {
       <div className="flex items-center space-x-2.5 p-3 sm:space-x-5">
         <Link to="/#home">
           <img
-            src="public/images/logo/light/GNS_Horizontal_Black.svg"
+            src={logo}
             alt="GameNonStop Logo"
             className="h-6 sm:h-[30px]"
           />

@@ -1,11 +1,11 @@
 import "../../css/rating-carousel-style.css";
 import Helmet from "react-helmet";
-import profileEmilyJohnson from "../../../assets/images/Profile_EmilyJohnson.jpg";
-import profileSarahMitchell from "../../../assets/images/Profile_SarahMitchell.jpg";
-import profileKevinZhang from "../../../assets/images/Profile_KevinZhang.jpg";
-import profileLucasHernandez from "../../../assets/images/Profile_LucasHernandez.jpg";
-import profilePriyaKapoor from "../../../assets/images/Profile_PriyaKapoor.jpg";
-import profileJakeLing from "../../../assets/images/Profile_JakeLing.jpg";
+import profileEmilyJohnson from "../../../assets/images/people/Profile_EmilyJohnson.jpg";
+import profileSarahMitchell from "../../../assets/images/people/Profile_SarahMitchell.jpg";
+import profileKevinZhang from "../../../assets/images/people/Profile_KevinZhang.jpg";
+import profileLucasHernandez from "../../../assets/images/people/Profile_LucasHernandez.jpg";
+import profilePriyaKapoor from "../../../assets/images/people/Profile_PriyaKapoor.jpg";
+import profileJakeLing from "../../../assets/images/people/Profile_JakeLing.jpg";
 import { useEffect } from "react";
 
 function MainRatingSection() {

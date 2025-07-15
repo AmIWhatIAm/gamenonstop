@@ -1,6 +1,7 @@
 import '../css/footer.css'; // Import the footer-specific CSS
 import { Link } from "react-router-dom"
-import footer_logo from '../../assets/images/GNS_Horizontal_White.svg'; // Import the image
+import footer_logo from '../../assets/images/logo/GNS_Horizontal_White.svg';
+
 function Footer (){
     return(
     <footer className="footer">
@@ -16,21 +17,15 @@ function Footer (){
         <Link to="/support">Support</Link>
         </nav>
         <div className="footer-social">
-            {/* <a href="https://www.twitter.com/gamenonstop"><i className="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.facebook.com/gamenonstop"><i className="fa-brands fa-square-facebook"></i></a>
-            <a href="https://www.instagram.com/gamenonstop"><i className="fa-brands fa-instagram"></i></a> */}
-            {/* X */}
-
             <a
                 href="https://x.com/gamenonstop"
                 className="flex items-center space-x-3 text-lg text-blue-500 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                {/* Custom X icon */}
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24" // Adjust size as needed
+                width="24" 
                 height="24"
                 fill="currentColor"
                 className="bi bi-twitter-x text-2xl"
