@@ -39,42 +39,6 @@
 - **Google OAuth** - Authentication service
 - **EmailJS** - Email service integration
 
-### Development Tools
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **PostCSS** - CSS processing
-- **Autoprefixer** - CSS vendor prefixing
-
-## 📁 Project Structure
-
-```
-├── public/                 # Static assets
-│   ├── images/            # Image assets
-│   │   ├── logo/          # GNS brand logos
-│   │   │   ├── light/     # Light theme logos
-│   │   │   └── dark/      # Dark theme logos
-│   │   ├── login-images/  # Login page assets
-│   │   ├── payment-methods/ # Payment method icons
-│   │   └── rating-images/ # User profile images
-│   └── ...
-├── src/
-│   ├── frontend/          # React components
-│   │   ├── pages/         # Page components
-│   │   ├── Cart/          # Shopping cart functionality
-│   │   ├── AI/            # Gemini AI integration
-│   │   ├── Email/         # Email support system
-│   │   ├── Payment/       # Payment processing
-│   │   ├── css/           # Styling files
-│   │   └── include/       # Shared components
-│   ├── backend/           # Backend services
-│   │   ├── php/           # PHP API endpoints
-│   │   └── webscraping/   # Python web scraping
-│   └── assets/            # Application assets
-├── package.json           # Dependencies and scripts
-├── vite.config.js         # Vite configuration
-└── tailwind.config.js     # Tailwind CSS configuration
-```
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -141,9 +105,6 @@ Database connection settings are configured in the PHP backend files located in 
 - `remove_from_cart.php` - Remove items from cart
 - `payment.php` - Process payments
 - `searchGame.php` - Search games
-
-### Python Flask API
-- `/searchScrape` - Web scraping for game data
 
 ## 🎨 UI/UX Features
 
