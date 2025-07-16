@@ -19,7 +19,7 @@ const MainAboutUsSection = () => (
         </li>
         {/* Add more list items similarly */}
       </ul>
-      <Link to="/store" className="play-button autoShow">Discover</Link>
+      <Link to="/store" className="discover-button autoShow">Discover</Link>
     </div>
   </section>
 );

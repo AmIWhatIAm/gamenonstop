@@ -18,7 +18,7 @@ const MainHomeSection = () => (
       <div className="home-buttons">
         <Link to="/store" className="discover-button autoShow">Discover</Link>
         <button
-          className="play-button"
+          className="play-button autoShow"
           onClick={() => document.getElementById("play").scrollIntoView()}
         >
           <i className="fa-solid fa-play"></i> Play
