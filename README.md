@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/images/logo/light/GNS_Full_Black.svg" alt="GameNonStop Logo" width="400"/>
+  <img src="src/assets/images/logo/GNS_Horizontal_Black.svg" alt="GameNonStop Logo" width="400"/>
   
   </br>
 
